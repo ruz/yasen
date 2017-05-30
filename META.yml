@@ -1,0 +1,31 @@
+---
+abstract: 'helps build async API servers'
+author:
+  - 'Ruslan Zakirov <ruslan.zakirov@gmail.com>'
+build_requires:
+  ExtUtils::MakeMaker: 6.59
+configure_requires:
+  ExtUtils::MakeMaker: 6.59
+distribution_type: module
+dynamic_config: 1
+generated_by: 'Module::Install version 1.18'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+module_name: Yasen
+name: Yasen
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  Async::ContextSwitcher: 0.01
+  JSON: 0
+  Plack::Request: 0
+  Promises: 0.90
+  Scalar::Util: 0
+  perl: 5.16.0
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.01
