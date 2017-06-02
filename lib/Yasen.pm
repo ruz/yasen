@@ -22,7 +22,7 @@ use Scalar::Util qw(blessed);
 sub init {
     my $self = shift;
 
-    $Yase::Base::app = $self;
+    $Yasen::Base::app = $self;
 
     $self->{config} ||= $self->load_config_file(
         $self->{config_file} ||= 'etc/config.json'

@@ -6,17 +6,7 @@ package Yasen::Base;
 use base 'Japster::Base';
 
 use Yasen::Logger;
-
-use AnyEvent;
 use Async::ContextSwitcher qw(context cb_w_context);
-use Scalar::Util qw(refaddr);
-BEGIN {
-    no strict 'refs';
-    *{'AnyEvent::CondVar::Base::(bool'} = sub { 1 }; # bool
-    *{'AnyEvent::CondVar::Base::(""'} = sub { "".refaddr($_[0]) };
-    *{'AnyEvent::CondVar::Base::(=='} = sub { "$_[0]" eq "$_[1]" };
-};
-use AnyEvent::Redis;
 
 our $app;
 sub app {
