@@ -9,6 +9,7 @@ requires
     'Async::ContextSwitcher' => '0.01',
     'Plack::Request' => '0',
     'JSON' => '0',
+    'Digest::MD5' => '0',
 ;
 
 
