@@ -10,6 +10,7 @@ requires
     'Plack::Request' => '0',
     'JSON' => '0',
     'Digest::MD5' => '0',
+    'Router::Simple' => '0',
 ;
 
 

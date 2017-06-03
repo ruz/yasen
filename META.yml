@@ -25,6 +25,7 @@ requires:
   JSON: 0
   Plack::Request: 0
   Promises: 0.90
+  Router::Simple: 0
   Scalar::Util: 0
   perl: 5.16.0
 resources:
