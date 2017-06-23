@@ -132,7 +132,7 @@ sub arguments {
         $res = $plackr->query_parameters;
     }
     elsif ( ($env->{CONTENT_TYPE}||'') =~ m{^application/(json|[a-z.]+\+json|json\+[a-z.])$} ) {
-        $res = $self->u->json->decode( $plackr->raw_body );
+        $res = $self->json->decode( $plackr->raw_body );
     }
     else {
         $res = $plackr->parameters;
@@ -144,7 +144,7 @@ sub format_error {
     my $self = shift;
     my $err = shift;
     unless ( blessed $err && $err->isa('Japster::Exception') ) {
-        $self->log->error($self->u->dump([$err, @_]));
+        $self->log->error($self->dump([$err, @_]));
         return $self->simple_psgi_response(500, text => 'internal server error');
     }
 
