@@ -53,7 +53,14 @@ sub handle_request {
     my $env = shift;
     my $ctx = $self->ctx->new;
     my $request = $ctx->{request} = $self->request_class->new( app => $self );
-    return $request->handle( $env );
+    my $rv;
+    eval { $rv = $request->handle( $env ); 1 }
+    or do {
+        return $@->format if blessed $@;
+        $self->log->error("$@");
+        return [500, ['content-type' => 'text/plain'], ['internal server error']];
+    };
+    return $rv;
 }
 
 sub router {
